@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  font-family: Dosis, sans-serif;
+  /* font-size: 24px; */
+}
+
+/* general  */
+
+.primary_text {
+  color: #154360;
+}
+
+#main_container {
+  /* display: grid;
+  grid-template-areas:
+    "header "
+    "main "
+    "animation"
+    "animation "; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  #main_container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#main_container > img {
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  object-fit: cover;
+  /* background-size: cover; */
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0.2;
+}
+
+#main_container .bg {
+  background-color: #154360;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+#animation {
+  grid-area: animation;
+}
+
+/* header-----------------------------------------------------------------*/
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* padding: 50px 0 0 0; */
+  /* flex: 1; */
+}
+
+/* title */
+header .title {
+  display: flex;
+  width: 30%;
+  font-size: 24px;
+}
+
+header .title section {
+  display: flex;
+  flex-direction: column;
+}
+
+header .title img {
+  position: static;
+  width: 100px;
+  height: 50px;
+}
+
+/* direction */
+
+header .direction {
+  display: flex;
+  flex-direction: column;
+}
+
+header .direction .contact_info ul,
+header .direction nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+header .direction .contact_info ul li {
+  padding: 0 10px;
+}
+header .direction .contact_info ul li > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+}
+
+header .direction nav ul {
+  list-style: none;
+}
+
+header .direction nav ul li a,
+header .direction .contact_info ul li section a {
+  text-decoration: none;
+}
+
+header .direction nav ul li a:visited,
+header .direction .contact_info ul li section a:visited {
+  /* text-decoration: none; */
+  color: none;
+}
+
+/* cards ----------------------------------------------------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-evenly;
+  gap: 0.7rem;
+}
+
+.card {
+  border: 1px;
+  border-radius: 5px;
+}
+
+.card > section > img {
+  border-radius: 5px;
+  width: 100%;
+  height: 50%;
+}
+
+.card > section:last-child {
+  display: flex;
+  flex-direction: column;
+}

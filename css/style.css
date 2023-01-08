@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  font-family: Dosis, sans-serif;
+  /* font-size: 24px; */
+}
+
+/* general  */
+
+.primary_text {
+  color: #154360;
+}
+
+#main_container {
+  /* display: grid;
+  grid-template-areas:
+    "header "
+    "main "
+    "animation"
+    "animation "; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  #main_container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#main_container > img {
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  object-fit: cover;
+  /* background-size: cover; */
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0.2;
+}
+
+#main_container .bg {
+  background-color: #154360;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+#animation {
+  grid-area: animation;
+}
+
+/* header-----------------------------------------------------------------*/
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* padding: 50px 0 0 0; */
+  /* flex: 1; */
+}
+
+/* title */
+header .title {
+  display: flex;
+  width: 30%;
+  font-size: 24px;
+}
+
+header .title section {
+  display: flex;
+  flex-direction: column;
+}
+
+header .title img {
+  position: static;
+  width: 100px;
+  height: 50px;
+}
+
+/* direction */
+
+header .direction {
+  display: flex;
+  flex-direction: column;
+}
+
+header .direction .contact_info ul,
+header .direction nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+header .direction .contact_info ul li {
+  padding: 0 10px;
+}
+header .direction .contact_info ul li > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+}
+
+header .direction nav ul {
+  list-style: none;
+}
+
+header .direction nav ul li a,
+header .direction .contact_info ul li section a {
+  text-decoration: none;
+}
+
+header .direction nav ul li a:visited,
+header .direction .contact_info ul li section a:visited {
+  /* text-decoration: none; */
+  color: none;
+}
+
+/* main------------------------------------------------------------------ */
+
+main {
+  /* flex: 1; */
+  display: flex;
+  justify-content: space-around;
+}
+
+/* content */
+
+.content {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-size: 28px;
+}
+
+/* form */
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+form > * {
+  margin: 5px 0;
+}
+
+form label {
+  display: inline;
+}
+
+/* animation------------------------------------------------------------- */
+
+#animation {
+  margin-left: 15%;
+  width: 70%;
+  /* flex: 1; */
+  height: 100%;
+  /* background: url(../images/sky.jpg) no-repeat center center/cover; */
+  position: relative;
+  overflow: hidden;
+
+  bottom: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.buildings {
+  width: 1000%;
+  height: 100%;
+  display: block;
+  background: url(../images/city.png) repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: city 20s linear infinite;
+}
+
+@keyframes city {
+  100% {
+    transform: translate(-3400px);
+  }
+}
+
+.road {
+  height: 20%;
+  width: 1000%;
+  display: block;
+  background: url(../images/road.jpg) repeat-x;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: road 5s linear infinite;
+}
+
+@keyframes road {
+  100% {
+    transform: translate(-3400px);
+  }
+}
+
+.car {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  /* bottom: 2%; */
+  left: 40%;
+  animation: car 1s linear infinite;
+}
+
+@keyframes car {
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  0% {
+    transform: translateY(-1px);
+  }
+}
+
+#animation .car img {
+  height: 50%;
+  opacity: 1;
+  width: 30%;
+}
+
+.wheel {
+  position: absolute;
+  bottom: 1%;
+  left: 42%;
+  width: 25%;
+  height: 22%;
+  z-index: 2;
+}
+
+.wheel img.front {
+  position: absolute;
+  left: 3%;
+}
+.wheel img.back {
+  position: absolute;
+  left: 77%;
+}
+
+.wheel img {
+  width: 20%;
+  height: 80%;
+  animation: wheel 1s linear infinite;
+}
+
+@media screen and (max-width: 500) {
+}
+
+@keyframes wheel {
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center;
+  }
+}
